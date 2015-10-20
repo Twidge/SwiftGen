@@ -1,0 +1,6 @@
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\bin\Debug\SwiftGen.exe.config
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\bin\Debug\SwiftGen.exe
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\bin\Debug\SwiftGen.pdb
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\obj\Debug\SwiftGen.csprojResolveAssemblyReference.cache
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\obj\Debug\SwiftGen.exe
+c:\users\matthew\documents\visual studio 2013\Projects\SwiftGen\SwiftGen\obj\Debug\SwiftGen.pdb
