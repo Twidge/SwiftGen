@@ -272,6 +272,8 @@ namespace SwiftGen
             fileRead.Close();
         }
 
+        // TagFirstAndLast() checks to see which words are used at the start and end of lines in input.txt (for more realistic sentences)
+
         public static void TagFirstAndLast()
         {
             StreamReader fileRead = new StreamReader("input.txt");
@@ -365,6 +367,8 @@ namespace SwiftGen
             } while (nextChar != -1);
         }
 
+        // AddToPArray adds new data to the probability array.
+
         public static void AddToPArray(string oldWord, string newWord, bool isEndOfLine = false)
         {
             bool seenBefore = false;
@@ -421,6 +425,8 @@ namespace SwiftGen
                 }
             }
         }
+
+        // AddToBPArray adds new data to the backwards probability array.
 
         public static void AddToBPArray(string oldWord, string newWord, bool isStartOfLine = false)
         {

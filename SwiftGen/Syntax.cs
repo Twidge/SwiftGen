@@ -10,6 +10,11 @@ namespace SwiftGen
 
     class Syntax
     {
+        /*
+         * RhymeCheck() checks if two words rhyme, though it's not perfect - there'll always be exceptions to any rule-based
+         * method for checking if words rhyme.
+         */
+
         public static bool RhymeCheck(string wordA, string wordB)
         {
             bool doesRhyme = false;
@@ -62,6 +67,8 @@ namespace SwiftGen
             return doesRhyme;
         }
 
+        // GetAllRhymingWords() grabs everything that rhymes with a certain word.
+
         public static List<string> GetAllRhymingWords(string word)
         {
             List<string> output = new List<string>();
@@ -92,24 +99,30 @@ namespace SwiftGen
             return output;
         }
 
+        // This method is not my own work.
+
         public static int CountSyllables(string word)
         {
             char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
             string currentWord = word;
             int numVowels = 0;
             bool lastWasVowel = false;
+
             foreach (char wc in currentWord)
             {
                 bool foundVowel = false;
+
                 foreach (char v in vowels)
                 {
-                    //don't count diphthongs
+                    // Forget diphthongs
+
                     if (v == wc && lastWasVowel)
                     {
                         foundVowel = true;
                         lastWasVowel = true;
                         break;
                     }
+
                     else if (v == wc && !lastWasVowel)
                     {
                         numVowels++;
@@ -119,18 +132,27 @@ namespace SwiftGen
                     }
                 }
 
-                //if full cycle and no vowel found, set lastWasVowel to false;
+                // If we go through a full cycle and no vowel was found, set lastWasVowel to false;
+
                 if (!foundVowel)
+                {
                     lastWasVowel = false;
+                }
             }
-            //remove es, it's _usually? silent
-            if (currentWord.Length > 2 &&
-                currentWord.Substring(currentWord.Length - 2) == "es")
+
+            // Remove es, it's usually silent
+
+            if (currentWord.Length > 2 && currentWord.Substring(currentWord.Length - 2) == "es")
+            {
                 numVowels--;
-            // remove silent e
-            else if (currentWord.Length > 1 &&
-                currentWord.Substring(currentWord.Length - 1) == "e")
+            }
+
+            // Remove silent e
+
+            else if (currentWord.Length > 1 && currentWord.Substring(currentWord.Length - 1) == "e")
+            {
                 numVowels--;
+            }
 
             if(numVowels == 0)
             {
